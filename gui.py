@@ -1,3 +1,4 @@
+from tkinter import Label
 from guizero import App, Text, TextBox, Box, PushButton
 from watertank import GlobalParameters, GPIOSimulator, WatertankController
 import time
@@ -134,10 +135,12 @@ class WaterTankGUI:
             self.sensor_box, width=300, height=70, grid=[0, 0]
         )
         self.cold_water_tape_status_lable = Text(
-            self.cold_water_tape_status, text="cold water tape status", align="left"
+            self.cold_water_tape_status,
+            text="cold water tape status",
+            align="left",
         )
         self.cold_water_tape_status_text = TextBox(
-            self.cold_water_tape_status, align="left"
+            self.cold_water_tape_status, align="left", text="ON/OFF"
         )
 
         self.hot_water_tape_status = Box(
@@ -147,7 +150,7 @@ class WaterTankGUI:
             self.hot_water_tape_status, text="hot water tape status", align="left"
         )
         self.hot_water_tape_status_text = TextBox(
-            self.hot_water_tape_status, align="left"
+            self.hot_water_tape_status, align="left", text="ON/OFF"
         )
 
         self.output_water_tape_status = Box(
@@ -157,20 +160,20 @@ class WaterTankGUI:
             self.output_water_tape_status, text="output water tape status", align="left"
         )
         self.output_water_tape_status_text = TextBox(
-            self.output_water_tape_status, align="left"
+            self.output_water_tape_status, align="left", text="ON/OFF"
         )
 
         self.volume_sensor = Box(self.sensor_box, width=300, height=100, grid=[0, 3])
         self.volume_sensor_lable = Text(
             self.volume_sensor, text="volume sensor", align="left"
         )
-        self.volume_sensor_text = TextBox(self.volume_sensor, align="left")
+        self.volume_sensor_text = TextBox(self.volume_sensor, align="left", text="--")
 
         self.temp_sensor = Box(self.sensor_box, width=300, height=30, grid=[0, 4])
         self.temp_sensor_lable = Text(
             self.temp_sensor, text="temprature sensor", align="left"
         )
-        self.temp_sensor_text = TextBox(self.temp_sensor, align="left")
+        self.temp_sensor_text = TextBox(self.temp_sensor, align="left", text="--")
 
         self.start_box = Box(
             self.app, border=1, width=600, height=60, grid=[0, 1, 2, 1]
